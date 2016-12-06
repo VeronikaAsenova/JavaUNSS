@@ -19,38 +19,28 @@ public class MatrixHorizontal {
      */
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        int rows, cols;
 
-                int rows, cols;
-	        System.out.println("How many rows? ");
-	        rows = sc.nextInt();
-	        System.out.println("How many columns? ");
-	        cols = sc.nextInt();
+        Scanner s = new Scanner(System.in);
+        System.out.print("How many rows? ");
+        rows = s.nextInt();
+        System.out.print("How many columns? ");
+        cols = s.nextInt();
 
-	        int[][] matrix = new int[rows][cols];
+        int count = 1;
 
-	        for (int row = 0; row < matrix.length; row++) {
-	            for (int col = 0; col < matrix[row].length; col++) {
-	            	if(rows==cols){
-	                matrix[row][col] =  1 +  row * matrix.length + col;
-	                System.out.printf("%d\t", matrix[row][col]);
-	            	}else if(rows>cols){
-	            		
-	            		matrix[row][col] =  1 +  row * (matrix.length-1) + col;
-		                System.out.printf("%d\t", matrix[row][col]);
-	            		
-	            	}else{
-	            		matrix[row][col] =  1 +  row * (matrix.length+1) + col;
-		                System.out.printf("%d\t", matrix[row][col]);
-	            	}
-	            }
-	            System.out.println();
-	        }
-	          
-	    
-	    
+        int[][] m = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                m[i][j] = count++;
+            }
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.printf("%d\t", m[i][j]);
+            }
+            System.out.println();
+        }
 
     }
-
-
 }

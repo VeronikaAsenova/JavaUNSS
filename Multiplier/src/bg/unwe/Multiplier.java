@@ -18,23 +18,23 @@ public class Multiplier {
      */
     public static void main(String[] args) {
 
-        int size;
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Size: ");
-        size = sc.nextInt();
-        int result;
-
-        char[][] matrix = new char[size][size];
-        for (int i = 0; i < matrix.length; i++) {
-
-            
-
-            System.out.println("first " + matrix[i] + ":");
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.println("second " + j + ":");
-            }
+        Scanner s = new Scanner(System.in);
+        System.out.print("Size: ");
+        int size = s.nextInt();
+        int[] first = new int[size];
+        int[] second = new int[size];
+        
+        for(int i = 0; i < first.length; i++) {
+            System.out.print("first " + i + ": ");
+            first[i] = s.nextInt();
         }
-
+        for(int i = 0; i < second.length; i++){
+            System.out.print("second " + i + ": ");
+            second[i] = s.nextInt();
+        }
+        for(int i = 0; i < second.length; i++){
+            System.out.println("" + first[i] * second[i]);
+        }
     }
-
+    
 }
